@@ -11,10 +11,11 @@
   padding: 10px;
   font-size: 20px;
   font-family: fantasy;
-  
+  color: black;  
 }
 .header li:hover{
   background-color: lightsalmon;
+  zoom: 1.2;
 }
 
 .header .store {
@@ -23,5 +24,10 @@
     margin: 15px 0px 5px 0px;
     display: inline-block;
     border-bottom: 5px solid black
+}
+
+:any-link{
+  color: black;
+  text-decoration: none;
 }
 
