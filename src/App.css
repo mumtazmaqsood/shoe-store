@@ -14,12 +14,13 @@
   color: black;  
 }
 .header li:hover{
-  background-color: lightsalmon;
-  zoom: 1.2;
+  background-color: lightblue;
+  /* zoom: 1.2; */
 }
 
 .header .store {
-  color: peru;
+  /* color: peru; */
+  color: lightblue;
     font-size: 28px;
     margin: 15px 0px 5px 0px;
     display: inline-block;
@@ -29,5 +30,84 @@
 :any-link{
   color: black;
   text-decoration: none;
+}
+
+
+
+.products-wrapper{
+  display: flex;
+  /* flex-direction: column; */
+  /* border: 2px solid black; */
+  flex-wrap:wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: center;
+  
+  
+
+}
+
+.items {
+  font-weight: bold;
+  /* border: 2px solid lightcoral; */
+  max-width: 400px;
+  max-height:850px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  box-shadow: 5px 5px lightseagreen;
+  text-align: left;
+  padding:10px;
+  border-radius: 20px;
+  
+  
+}
+
+li{
+  list-style-type: none;
+  /* border: 2px solid rgb(255, 164, 164); */
+  /* border:2px soild lightblue; */
+  border: 2px solid lightblue;
+  font-family:'Courier New', Courier, monospace;
+  border-radius: 40px;
+  
+} 
+.des {
+  display:flex;
+  border:none;
+  /* border: 2px solid black; */
+  align-items: center;
+  border-radius: 20px;
+  background-color: azure;  
+}
+
+.image{
+  border: 2px solid white; 
+  border-radius: 40px;
+  box-shadow: 0 10px 10px 0px  lightsteelblue;
+  margin-right: 10px;
+}
+
+.price {
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: lightblue;
+  /* width:250px; */
+  margin: 10px;
+  border-radius: 50px;
+  padding:20px;
+  
+}
+.price:hover{
+  zoom:1.2;
+}
+.price button{
+  margin-left: 80px;
+  border-radius: 10px;
+  
+}
+.title {
+  background-color: lightblue;
+  text-align: center;
+  border-radius: 30px;
 }
 

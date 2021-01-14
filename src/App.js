@@ -6,10 +6,22 @@ import {About} from './components/About';
 import {Product} from './components/Product';
 import {Products} from './components/Products';
 import {ProductDetail} from './components/ProductDetail';
-
+import { useState, useEffect } from 'react'
 
 
 function App() {
+  
+  const [objData, setObjData] = useState([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            fetch('https://fakestoreapi.com/products')
+                .then(res => res.json())
+                .then(data => setObjData(data))
+        }
+        fetchData();
+    }, [])
+    
+    
   return (
     <div className="App">
       <Header />
@@ -17,8 +29,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="about" element={<About />}/>
           <Route path="product" element={<Product />}>
-            <Route path="/" element={<Products />} />
-            <Route path=":id" element={<ProductDetail />}/>
+            <Route path="/" element={<Products productData={objData}/>} />
+            <Route path=":id" element={<ProductDetail detailData={objData}/>}/>
           </Route>
       </Routes>
     </div>
