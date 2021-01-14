@@ -7,6 +7,7 @@ import {Product} from './components/Product';
 import {Products} from './components/Products';
 import {ProductDetail} from './components/ProductDetail';
 import { useState, useEffect } from 'react'
+import { Footer } from './components/Footer';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
             <Route path=":id" element={<ProductDetail detailData={objData}/>}/>
           </Route>
       </Routes>
+      <Footer />
     </div>
   );
 }

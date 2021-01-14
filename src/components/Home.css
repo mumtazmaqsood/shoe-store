@@ -1,0 +1,31 @@
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    background-color: lightblue;
+    border: 2px solid lightcyan;
+    height: 500px;
+}
+
+.box1{
+    width: 30%;
+    border: 2px solid lightcyan;
+    border-radius: 20px;
+}
+.box2{
+    width:70%;
+    border-radius: 20px;
+    border: 2px solid lightcyan;
+}
+
+/* .box3{
+    width: 70%;
+    height: 300px;
+    border: 2px solid lightcyan;
+    border-radius: 20px;
+}
+.box4{
+    width:30%;
+    border-radius: 20px;
+    border: 2px solid lightcyan;
+} */
