@@ -8,6 +8,10 @@
 
 .item1{
     max-width: 40%;
+    
+}
+.item1:hover{
+    zoom: 1.3;
 }
 
 
