@@ -1,10 +1,10 @@
 
 
-import {createContext, useReducer} from 'react';
-import {AppReducer} from './AppReducer';
+import { createContext, useReducer } from 'react';
+import { AppReducer } from './AppReducer';
 
 
-const initialState =  {
+const initialState = {
     items: []
 }
 
@@ -12,32 +12,33 @@ const initialState =  {
 export const GlobalContext = createContext(initialState);
 
 
-export const GlobalProvider = ({children}) => {
+export const GlobalProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
 
-        /* function addItem(item){
-            dispatch({
-                type: 'ADD_ITEM',
-                payload: item
-            });
-        } */ 
+    /* function addItem(item){
+        dispatch({
+            type: 'ADD_ITEM',
+            payload: item
+        });
+    } */
 
-        function delItem(id){
-            dispatch({
-                type: 'deleteItem',
-                payload:id
-            })
-        }
+    function delItem(id) {
+        dispatch({
+            type: 'deleteItem',
+            payload: id
+        })
+    }
 
-    return(
+    return (
         <GlobalContext.Provider value={
-            {items: state.items,
+            {
+                items: state.items,
                 /* addItem */
-             dispatch: dispatch,
-             delItem   
-            }  
+                dispatch: dispatch,
+                delItem
+            }
         }>
-        {children}
+            {children}
 
         </GlobalContext.Provider>
     );

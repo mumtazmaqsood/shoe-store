@@ -15,9 +15,6 @@ means --> on zeroth level
 export const Products = ({ productData }) => {
     console.log("productData", productData);
 
-    const [pId, setPId] = useState();
-
-
     const addItem = useContext(GlobalContext);
 
     console.log("addITem", addItem);
@@ -37,10 +34,11 @@ export const Products = ({ productData }) => {
 
                     </Link>
                     <li className="price">Price:${price}
-                        <button onClick={() =>
+                        <button onClick={() => 
                             addItem.dispatch({
-                                type: 'addItem', payload: {id, price, title }
-                            })
+                                type: 'addItem', payload: {id, image, title,  price }
+                            }) 
+                            
                         }>
                             Add to Cart</button></li>
 
