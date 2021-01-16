@@ -5,9 +5,11 @@ import {Home} from './components/Home';
 import {About} from './components/About';
 import {Product} from './components/Product';
 import {Products} from './components/Products';
+import {Cart} from './components/Cart';
 import {ProductDetail} from './components/ProductDetail';
 import { useState, useEffect } from 'react'
 import { Footer } from './components/Footer';
+import { GlobalProvider } from './context/GlobalState';
 
 
 function App() {
@@ -24,18 +26,22 @@ function App() {
     
     
   return (
+    <GlobalProvider>
     <div className="App">
       <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="about" element={<About />}/>
+          <Route path="cart" element= {<Cart />} />
           <Route path="product" element={<Product />}>
             <Route path="/" element={<Products productData={objData}/>} />
             <Route path=":id" element={<ProductDetail detailData={objData}/>}/>
+          
           </Route>
       </Routes>
       <Footer />
     </div>
+    </GlobalProvider>
   );
 }
 

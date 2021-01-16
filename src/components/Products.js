@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { GlobalContext } from '../context/GlobalState';
 
 
 
@@ -12,8 +13,15 @@ means --> on zeroth level
 
 
 export const Products = ({ productData }) => {
-
     console.log("productData", productData);
+
+    const [pId, setPId] = useState();
+
+
+    const addItem = useContext(GlobalContext);
+
+    console.log("addITem", addItem);
+
     return (
 
         <div >
@@ -24,11 +32,17 @@ export const Products = ({ productData }) => {
                         <h3 className="title">{title}</h3><br />
                         <li className="des"><img src={image}
                             height="200" width="180" alt="{price}" className="image"></img> <br />
-                            {description}</li><br />
-                        
+                            {description}
+                        </li><br />
+
                     </Link>
-                    <li className="price">Price:${price} 
-                     <button onClick={(e) => { alert("added to cart") }}>Add to Cart</button></li>
+                    <li className="price">Price:${price}
+                        <button onClick={() =>
+                            addItem.dispatch({
+                                type: 'addItem', payload: {id, price, title }
+                            })
+                        }>
+                            Add to Cart</button></li>
 
                 </li>))}
             </ul>

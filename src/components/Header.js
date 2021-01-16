@@ -20,6 +20,9 @@ export const Header = () => {
                 <li>
                     <Link to="product"> Products </Link>
                 </li>
+                <li>
+                    <Link to="cart"> Cart </Link>
+                </li>
             </ul>
             <hr />
         </div>
