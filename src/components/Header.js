@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { GlobalContext } from '../context/GlobalState';
 
 export const Header = () => {
+    const {items} = useContext(GlobalContext); 
+    //through Globalstate get items , then find the length and display in fornt of cart
+    console.log("items.length",items.length)
     return (
         <div className="header">
             <hr />
@@ -20,8 +24,9 @@ export const Header = () => {
                 <li>
                     <Link to="product"> Products </Link>
                 </li>
-                <li>
-                    <Link to="cart"> Cart </Link>
+                <li className="shoppingCart">
+                    {/* if cart is empty then show nothing else show items */}
+                    <Link to="cart"> Cart {items.length? ":"+items.length:""}</Link>
                 </li>
             </ul>
             <hr />

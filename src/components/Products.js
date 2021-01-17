@@ -24,7 +24,7 @@ export const Products = ({ productData }) => {
         <div >
             <ul className="products-wrapper">
                 {Object.entries(productData).map(([id, { title, image, description, price }]) =>
-                (<li className="items">
+                (<li className="items" key={id}>
                     <Link to={`/product/${id}`}>
                         <h3 className="title">{title}</h3><br />
                         <li className="des"><img src={image}

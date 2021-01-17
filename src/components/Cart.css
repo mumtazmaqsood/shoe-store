@@ -37,3 +37,10 @@
     padding: 20px;
 
 }
+
+.checkout{
+    cursor: pointer;
+}
+.checkout:hover{
+    zoom: 1.2;
+}

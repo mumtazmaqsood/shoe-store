@@ -1,0 +1,14 @@
+.checkout-wrapper {
+    display: flex;
+    
+}
+.info{
+    width: 60%;
+    border: 2px solid lightcoral;
+}
+
+.cart{
+    width: 40%;
+    border: 2px solid lightcoral;
+}
+

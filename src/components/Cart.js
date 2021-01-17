@@ -1,18 +1,25 @@
 import React, { useContext, useState } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 import './Cart.css';
+import { Link } from 'react-router-dom';
+import { Checkout } from './Checkout';
 
 export const Cart = () => {
 
-    const { items, delItem } = useContext(GlobalContext); //it is getting data form initial state
+    const { items, delItem } = useContext(GlobalContext);
+    //it is getting data form initial state
 
-    const totalPrice = [];  
+    const emptyCart = useContext(GlobalContext);
+
+    const totalPrice = [];
     //this array is using to calculate total price
-    
 
+    
     return (
         <div className="main-cart-wrapper">
-            <h1> Shopping Cart </h1>
+            <h1> Shopping Cart {items.length ? `has:${items.length} items` : "is empty"} </h1>
+
+
 
             {items.map((item, id) =>
                 <div className="cart-wrapper" key={id} >
@@ -35,14 +42,25 @@ export const Cart = () => {
             )
 
             }
-            <div className="cart-totalPrice">
-                <div>
-                Total Price:
+
+            {/* if there is items in cart then show this div else nothing */}
+            {items.length ?
+                <div className="cart-totalPrice">
+                    <div>
+                        Total Price:
+                    </div>
+                    <div>
+                        ${totalPrice.reduce(function (a, b) { return a + b; }, 0)}
+                    </div>
+                    <div className="checkout">
+                        <Link to="/checkout" >
+                            <button onClick={() => {
+                                emptyCart.dispatch({ type: 'checkout', payload: {} }) }}>
+                                Checkout </button>
+                        </Link>
+                    </div>
                 </div>
-                <div>
-                ${totalPrice.reduce(function (a, b) { return a + b; }, 0)}
-                </div>
-            </div>
+                :" "}        
         </div>
     )
 }

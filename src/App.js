@@ -6,13 +6,16 @@ import {About} from './components/About';
 import {Product} from './components/Product';
 import {Products} from './components/Products';
 import {Cart} from './components/Cart';
+import {Checkout} from './components/Checkout';
 import {ProductDetail} from './components/ProductDetail';
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { Footer } from './components/Footer';
-import { GlobalProvider } from './context/GlobalState';
+import { GlobalContext, GlobalProvider } from './context/GlobalState';
 
 
 function App() {
+
+  
   
   const [objData, setObjData] = useState([]);
     useEffect(() => {
@@ -34,6 +37,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="about" element={<About />}/>
           <Route path="cart" element= {<Cart />} />
+          <Route path="checkout" element = {<Checkout />} />
           <Route path="product" element={<Product />}>
             <Route path="/" element={<Products productData={objData}/>} />
             <Route path=":id" element={<ProductDetail detailData={objData}/>}/>

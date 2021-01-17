@@ -2,22 +2,30 @@
 
 .header {
   text-align: center;    
-  background-color: lightblue;
+  background-color: #add8e6;
   border-radius: 30px;
+  position: sticky; top: 0; /* it stick the nav bar  */
 }
 
 .header li {
   display: inline-block;
   list-style-type: none;
-  margin:10px 40px;
+  margin:5px 30px;
   padding: 10px;
   font-size: 20px;
   font-family: fantasy;
   color: black;  
+  
+  
+
 }
 .header li:hover{
   background-color: rgb(88, 88, 243);
   /* zoom: 1.2; */
+}
+
+.header .shoppingCart{
+  background-color: lightcoral;
 }
 
 .header .store {

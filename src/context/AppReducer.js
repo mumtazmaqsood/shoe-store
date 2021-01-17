@@ -12,6 +12,10 @@ export const AppReducer = (state, action) => {
                 ...state,
                 items: state.items.filter( item => item.id !== action.payload)
             }
+        case 'checkout':
+            return{    
+                items: []    
+            }
         default:
             return state;
     }
