@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext} from 'react';
 import { GlobalContext } from '../context/GlobalState';
 import './Cart.css';
 import { Link } from 'react-router-dom';
-import { Checkout } from './Checkout';
+
 
 export const Cart = () => {
 
@@ -13,11 +13,13 @@ export const Cart = () => {
 
     const totalPrice = [];
     //this array is using to calculate total price
+    //console.log("totalPrice", totalPrice)
 
+    
     
     return (
         <div className="main-cart-wrapper">
-            <h1> Shopping Cart {items.length ? `has:${items.length} items` : "is empty"} </h1>
+            <h1 className="sc"> Shopping Cart {items.length ? `has:${items.length} items` : "is empty"} </h1>
 
 
 
@@ -26,10 +28,10 @@ export const Cart = () => {
                     {totalPrice.push(item.price)}
 
                     <div className="cart-image" >
-                        <img src={item.image} width="100" height="100" />
+                        <img src={item.image} width="100" height="100" alt={item.title} />
                     </div>
 
-                    <div className="cart-title" > {item.id, item.title}
+                    <div className="cart-title" > {item.id} {item.title}
                     </div>
                     <div className="cart-price" >
                         $ {item.price} </div>
@@ -57,7 +59,9 @@ export const Cart = () => {
                             <button onClick={() => {
                                 emptyCart.dispatch({ type: 'checkout', payload: {} }) }}>
                                 Checkout </button>
+                                
                         </Link>
+
                     </div>
                 </div>
                 :" "}        

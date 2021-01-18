@@ -1,5 +1,6 @@
 import React from 'react';
-import './Checkout.css'
+import './Checkout.css';
+import {Cart} from './Cart'
 
 
 
@@ -7,12 +8,10 @@ export const Checkout = ({checkoutitems}) => {
     return (
         <div className="checkout-wrapper">
             <div className="info">
-                {/* Your order has been placed */}
-
-                {checkoutitems}
+                <h1>Checkout Sucessfully</h1>
             </div>
             <div className="cart">
-            
+            {/* <Cart /> */}
             </div>
         </div>
     )

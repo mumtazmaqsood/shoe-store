@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 
 export const Footer = () => {
     return (
-        <div className="header">
+        <div className="footer">
             <h3>Footer</h3>
             <hr />
             <ul>

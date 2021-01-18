@@ -24,7 +24,7 @@ export const ProductDetail = ({ detailData }) => {
         <div className="detail-container" >
 
             <div className="item1" >
-                <img src={image} height="500" />
+                <img src={image} height="500" alt={title} />
             </div>
 
             <div className="item2" >

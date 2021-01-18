@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, {useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalState';
 
@@ -27,13 +27,13 @@ export const Products = ({ productData }) => {
                 (<li className="items" key={id}>
                     <Link to={`/product/${id}`}>
                         <h3 className="title">{title}</h3><br />
-                        <li className="des"><img src={image}
+                        <li key={id} className="des"><img src={image}
                             height="200" width="180" alt="{price}" className="image"></img> <br />
                             {description}
                         </li><br />
 
                     </Link>
-                    <li className="price">Price:${price}
+                    <li key={id} className="price">Price:${price}
                         <button onClick={() => 
                             addItem.dispatch({
                                 type: 'addItem', payload: {id, image, title,  price }
