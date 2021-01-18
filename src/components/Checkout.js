@@ -1,6 +1,6 @@
 import React from 'react';
 import './Checkout.css';
-import {Cart} from './Cart'
+
 
 
 
